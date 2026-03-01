@@ -11,8 +11,9 @@ import (
 
 type Input struct {
 	ItemName string
-	NumberOfItems int 
-	PriceOfItem float
+	NumberOfItems string 
+	PriceOfItem string
+	Cost string
 
 }
   
@@ -31,11 +32,24 @@ func main() {
 
 	fmt.Print("Quantiy of the item: ")
 	scanner.Scan()
-	input.NumberOfItems = strconv.Itoa(scanner.Text())
+	quantity :=scanner.Text()
+	num, err := strconv.ParseFloat(quantity, 64)
+	if err != nil{
+		fmt.Println("Invalid Quantity")
+	}
+	input.NumberOfItems = quantity
 
 	fmt.Print("Price of the item: ")
 	scanner.Scan()
-	input.PriceOfItem = strconv.ParseFloat(scanner.Text())
+	price := scanner.Text()
+	cash, err := strconv.ParseFloat(price, 64)
+		if err != nil {
+		fmt.Println("Invalid Price")
+	}
+	input.PriceOfItem = price
+	val := num * cash
+	input.Cost = strconv.FormatFloat(val, 'f', 2, 64) 
 	// }
+	// int := Input(input.ItemName, input.NumberOfItems, input.PriceOfItem, input.Cost)
 	fmt.Print(input)
 }

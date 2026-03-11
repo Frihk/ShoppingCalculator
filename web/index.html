@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Grocery List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Premium Planning</p>
+        <h1>Smart Grocery List</h1>
+        <p class="subtitle">Your personal shopping assistant</p>
+      </div>
+      <div class="hero-glow"></div>
+    </header>
+
+    <main class="content">
+      <section class="list-panel" aria-label="Shopping list">
+        <div class="panel-header">
+          <div>
+            <h2>Shopping List</h2>
+            <p>Stay organized with itemized totals.</p>
+          </div>
+          <div class="search">
+            <label class="sr-only" for="search">Search items</label>
+            <input id="search" type="search" placeholder="Search items" />
+          </div>
+        </div>
+
+        <div class="list-head">
+          <span>Item</span>
+          <span>Qty</span>
+          <span>Price</span>
+          <span>Total</span>
+        </div>
+
+        <div id="list" class="list"></div>
+
+        <button id="add-item" class="btn btn-ghost" type="button">+ Add Item</button>
+
+        <div class="bottom-actions">
+          <div class="total-display">
+            <span>Total Cost</span>
+            <strong id="grand-total">$0.00</strong>
+          </div>
+          <div class="action-buttons">
+            <button id="done" class="btn btn-primary" type="button">Done Shopping</button>
+            <button id="edit" class="btn btn-secondary" type="button" hidden>Edit List</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="suggestions" aria-label="Suggestions">
+        <h2>Suggestions for You</h2>
+        <p>Tap to add essentials to your list.</p>
+        <div class="suggestion-list">
+          <div class="suggestion-card">
+            <span>Apples</span>
+            <button class="btn btn-mini" type="button" data-item="Apples">+ Add</button>
+          </div>
+          <div class="suggestion-card">
+            <span>Yogurt</span>
+            <button class="btn btn-mini" type="button" data-item="Yogurt">+ Add</button>
+          </div>
+          <div class="suggestion-card">
+            <span>Butter</span>
+            <button class="btn btn-mini" type="button" data-item="Butter">+ Add</button>
+          </div>
+          <div class="suggestion-card">
+            <span>Eggs</span>
+            <button class="btn btn-mini" type="button" data-item="Eggs">+ Add</button>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

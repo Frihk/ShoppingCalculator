@@ -50,7 +50,7 @@ func Input() ([]helper.Input, []helper.ProductStorage){
 		k = append(k, input)
 		store = helper.ProductStorage{
 			Name: input.ItemName,
-			Price: input.Cost,
+			Price: input.PriceOfItem,
 			Freq: 0,
 		}
 		x = append(x, store)

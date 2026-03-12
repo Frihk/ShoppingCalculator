@@ -12,9 +12,9 @@ import (
 // this script is incharge of saving, editing the data, loading the data from the json file where data is saved.
 // I'll also try to make sure the data is sorted by the frequency/ how many times the consumer buys the commodity, this will help when am making the suggestions
 
-func Jupdate() error {
+func Jupdate(newProduct []helper.ProductStorage) error {
 	filepath := "/home/fian/frihk/ShoppingCalculator/storage/shopinglogs.json"
-	_, newProduct := Input()
+	// _, newProduct := Input()
 	var products []helper.ProductStorage
 	// open the file
 	file, err := os.Open(filepath)
@@ -27,6 +27,7 @@ func Jupdate() error {
 		for i := range products {
 			if products[i].Name == c.Name {
 				products[i].Freq++
+				products[i].Price = c.Price
 				found = true
 				break
 			}

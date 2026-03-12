@@ -26,25 +26,31 @@ func Input() ([]helper.Input, []helper.ProductStorage){
 		if input.ItemName == "" {
 			break
 		}
-
-		fmt.Print("Quantiy of the item: ")
-		scanner.Scan()
-		quantity :=scanner.Text()
-		num, err := strconv.Atoi(quantity)
-		if err != nil{
-			fmt.Println("Invalid Quantity")
+		for {
+			fmt.Print("Quantiy of the item: ")
+			scanner.Scan()
+			quantity :=scanner.Text()
+			num, err := strconv.Atoi(quantity)
+			if err != nil || num <= 0{
+				fmt.Println("Invalid Quantity")
+				continue
+			}
+			input.NumberOfItems = num
+			break
 		}
-		input.NumberOfItems = num
-
-		fmt.Print("Price of the item: ")
-		scanner.Scan()
-		price := scanner.Text()
-		cash, err := strconv.ParseFloat(price, 32)
-			if err != nil {
-			fmt.Println("Invalid Price")
+		for {
+			fmt.Print("Price of the item: ")
+			scanner.Scan()
+			price := scanner.Text()
+			cash, err := strconv.ParseFloat(price, 32)
+				if err != nil || cash <= 0{
+					fmt.Println("Invalid Price")
+					continue
+				}
+			input.PriceOfItem = cash
+			break
 		}
-		input.PriceOfItem = cash
-		val := float64(num) * cash
+		val := float64(input.NumberOfItems) * input.PriceOfItem
 		input.Cost =  float64(val)//strconv.FormatFloat(val, 'f', 2, 32) 
 		// }
 		k = append(k, input)

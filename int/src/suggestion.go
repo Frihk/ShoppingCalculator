@@ -2,6 +2,8 @@ package src
 
 import (
 	"encoding/json"
+	"errors"
+	"io"
 	"os"
 
 	"ShoppingCalculator/helper"
@@ -36,6 +38,9 @@ func Suggestions(limit int) ([]helper.ProductStorage, error) {
 
 	var products []helper.ProductStorage
 	if err := json.NewDecoder(file).Decode(&products); err != nil {
+		if errors.Is(err, io.EOF) {
+			return []helper.ProductStorage{}, nil
+		}
 		return nil, err
 	}
 

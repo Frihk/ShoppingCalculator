@@ -2,6 +2,8 @@ package src
 
 import (
 	"encoding/json"
+	"errors"
+	"io"
 	"os"
 	"path/filepath"
 	"sort"
@@ -23,13 +25,19 @@ func logPath() string {
 
 func Jupdate(newProduct []helper.ProductStorage) error {
 	logFilePath := logPath()
+	if err := os.MkdirAll(filepath.Dir(logFilePath), 0o755); err != nil {
+		return err
+	}
+
 	// _, newProduct := Input()
 	var products []helper.ProductStorage
 	// open the file
 	file, err := os.Open(logFilePath)
 	if err == nil {
 		defer file.Close()
-		json.NewDecoder(file).Decode(&products)
+		if err := json.NewDecoder(file).Decode(&products); err != nil && !errors.Is(err, io.EOF) {
+			return err
+		}
 	}
 	for _, c := range newProduct {
 		found := false

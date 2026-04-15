@@ -1,7 +1,0 @@
-{
-  "go.toolsEnvVars": {
-    "GOPATH": "${workspaceFolder}/.gopath",
-    "GOMODCACHE": "${workspaceFolder}/.gopath/pkg/mod",
-    "GOBIN": "${workspaceFolder}/.gopath/bin"
-  }
-}

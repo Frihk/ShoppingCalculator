@@ -1,41 +1,19 @@
-# Shopping-calculator
+# ShoppingCalculator
 
-Accepts input from the user:
-    The name of item
-    quantity of the item
-    Price of the Item 
-    They are saved in a data base
+This repository has been reset to a backend-first project skeleton.
 
-From the use of this app, consumer is able to receive suggestions on the names of items to buys and give an average of the price based on the previous purchases
+The previous calculator, API, storage, and web implementation files were removed so the project can be rebuilt on a cleaner architecture.
 
-the structure
+Current structure:
 
-- server: 
-        - main.go
-web :
-        -index.html
-        -style.css
-        -web.js
-int :- 
-        - int: 
-                - src : 
-                    - calc.go            // it is incharge of calculating
-                    - dbpopulator.go    // fills the db
-                    - input.go         // process input from the user
-                    - suggestion.go   // checks the items that the user usualy purchase 
-                - main.go
-        - helper
+- `cmd/`
+- `internal/domain/`
+- `internal/services/`
+- `internal/storage/`
+- `internal/ingest/`
+- `internal/api/`
+- `internal/config/`
+- `internal/utils/`
+- `docs/`
 
-        - api:
-                - ItemHandle.go     // hangles the name of the items
-                - pricesHandler.go // handle the prices of each iitem
-                - nameHandler. go // handles the name of the customer
-        - storage:
-                - mysql
-
-Mostly handled
-
-The app should also be able to suggest the cheapest supper market a consumer can use. Checking the shopping of different supper market and return the cheapest.
-
-
-/// the branch supper market is for updating the suggestions to be based on the supermarket. I will also implement the suggestion to choose the cheapest supper market where a consumer can shop, also the consumer can add a supper market.
+Each folder currently contains only placeholders and notes. No implementation code has been added.

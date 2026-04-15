@@ -33,8 +33,9 @@ int :-
         - storage:
                 - mysql
 
-mostry handled
+Mostly handled
 
-The app should also be able to suggest the cheapest supper market a consumer can use. checking the shopping of different suppermarket and return the cheapest.
+The app should also be able to suggest the cheapest supper market a consumer can use. Checking the shopping of different supper market and return the cheapest.
 
 
+/// the branch supper market is for updating the suggestions to be based on the supermarket. I will also implement the suggestion to choose the cheapest supper market where a consumer can shop, also the consumer can add a supper market.

@@ -1,6 +1,4 @@
-# ShoppingCalculator
-
-This repository has been reset to a backend-first project skeleton.
+# Shopping Helper
 
 The previous calculator, API, storage, and web implementation files were removed so the project can be rebuilt on a cleaner architecture.
 
@@ -16,4 +14,4 @@ Current structure:
 - `internal/utils/`
 - `docs/`
 
-Each folder currently contains only placeholders and notes. No implementation code has been added.
+Each folder currently contains only placeholders and notes.
